@@ -2,7 +2,7 @@
   "name": "basquencheese",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://basquencheese.pl/basquencheese"
+  "homepage": "https://basquencheese.pl/basquencheese",
   "dependencies": {
     "@craco/craco": "^7.1.0",
     "dangerous-html": "0.1.13",
