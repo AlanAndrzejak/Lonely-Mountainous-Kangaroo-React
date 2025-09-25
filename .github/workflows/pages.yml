@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "release" ]
+    branches: [ "release" ]   # or change to [ "main" ] if that's your default
   workflow_dispatch:
 
 permissions:
@@ -24,6 +24,7 @@ jobs:
           node-version: "20"
       - run: npm install
       - run: npm run build
+      - run: cp build/index.html build/404.html   # 👈 add this line
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
@@ -37,4 +38,3 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
-
