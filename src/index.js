@@ -8,7 +8,7 @@ import NotFound from './views/not-found'
 
 const App = () => {
   return (
-    <BrowserRouter basename="/basquencheese">
+    <BrowserRouter>
       <Switch>
         {/* Home page */}
         <Route exact path="/" component={Home} />
