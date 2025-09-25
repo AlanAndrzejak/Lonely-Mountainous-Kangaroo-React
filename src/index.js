@@ -1,11 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import './style.css'
 import Home from './views/home'
@@ -13,14 +8,18 @@ import NotFound from './views/not-found'
 
 const App = () => {
   return (
-    <Router>
+    <BrowserRouter basename="/basquencheese">
       <Switch>
-        <Route component={Home} exact path="/" />
-        <Route component={NotFound} path="**" />
-        <Redirect to="**" />
+        {/* Home page */}
+        <Route exact path="/" component={Home} />
+
+        {/* catch-all for anything not matched */}
+        <Route path="*">
+          <NotFound />
+        </Route>
       </Switch>
-    </Router>
-  )
-}
+    </BrowserRouter>
+  );
+};
 
 ReactDOM.render(<App />, document.getElementById('app'))
